@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Animal" representedClassName="Animal" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="stamped" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="animals" inverseEntity="Category"/>
+    </entity>
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="animals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Animal" inverseName="category" inverseEntity="Animal"/>
+    </entity>
+    <entity name="SuperHero" representedClassName="SuperHero" syncable="YES">
+        <attribute name="ability" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="superheros" inverseEntity="Team"/>
+    </entity>
+    <entity name="Team" representedClassName="Team" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="superheros" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SuperHero" inverseName="teams" inverseEntity="SuperHero"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Animal" positionX="-54" positionY="9" width="128" height="103"/>
+        <element name="SuperHero" positionX="-45" positionY="54" width="128" height="88"/>
+        <element name="Team" positionX="-36" positionY="63" width="128" height="73"/>
+    </elements>
+</model>
